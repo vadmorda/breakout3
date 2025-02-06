@@ -1,0 +1,95 @@
+/* 🔹 GENERAL STYLES */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Special Elite", "Roboto", sans-serif;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+/* 🔹 PAGE TRANSITIONS - FIXES PAGE DISPLAY ISSUES */
+.page {
+  display: none; /* ✅ Fix: Hide pages properly */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* ✅ Fix: Ensure the page actually becomes visible */
+.page.active {
+  display: block !important;
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 🔹 ENSURE HIDDEN CLASS WORKS PROPERLY */
+.hidden {
+  display: none !important; /* ✅ Fix: Ensure hidden elements are truly hidden */
+  visibility: hidden; /* Extra safeguard */
+}
+
+
+/* 🔹 IMAGE + TEXT HEADER */
+.challenge-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.telegram-image {
+  max-width: 40%;
+  border-radius: 10px;
+}
+
+.challenge-text {
+  text-align: left;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 🔹 DECRYPTION CHALLENGE */
+.challenge-instructions {
+  max-width: 80%;
+  margin: auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+#encrypted-message {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+}
+
+#decryption-input {
+  padding: 10px;
+  font-size: 1.2em;
+  width: 50%;
+  text-align: center;
+}
+
+#check-decryption {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  background-color: #e94560;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#decryption-success {
+  background: rgba(0, 255, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}

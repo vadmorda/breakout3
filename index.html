@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>breakout parte 3</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WW1: Breakout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🔹 INTRO PAGE (DEFAULT START) -->
+  <div id="page-intro-3" class="page">
+    <h1>WW1: Breakout - Part 3</h1>
+    <p>After uncovering the German deadly plan, Jacques knows he must deliver this information to the Allied forces. With his heart pounding, he leaves the abandoned farmhouse and heads toward the forest. The night provides him some cover, but danger lurks in every shadow.
+
+As he moves carefully, the distant rumble of artillery shakes the ground. Suddenly, he hears muffled voices and footsteps approaching. He quickly drops to the ground, pressing himself against the cold earth. A German patrol is nearby.
+
+Holding his breath, Jacques remains still. He watches as the soldiers move past him, their lanterns flickering. Once the coast is clear, he continues his journey. After an hour of cautious movement, he notices something unusual—a metal hatch partially buried under dead leaves.
+
+He brushes away the debris and carefully opens the heavy hatch. A hidden bunker. Could this be a secret German outpost? Or an old, abandoned refuge?
+
+As he steps inside, the dim light reveals maps, documents, and strange equipment scattered across the wooden table. A radio device crackles faintly. Jacques' instincts tell him this place holds valuable intelligence, but there’s no time to waste..</p>
+    <p>To proceed, enter the code from your previous mission.</p>
+
+    <!-- 🔹 INPUT CODE BOX -->
+    <div id="code-box">
+      <p><strong>Enter the code to unlock the bunker:</strong></p>
+      <input type="text" id="bunker-code" placeholder="Enter 5-digit code" maxlength="5">
+      <button id="check-code">Submit</button>
+      <p id="code-error" class="hidden" style="color: red;">Incorrect! Try again.</p>
+    </div>
+  </div>
+
+  <!-- 🔹 CHALLENGE 1 (HIDDEN AT START) -->
+  <div id="challenge-1" class="page">
+    <h1>Challenge 1: The Coded Message</h1>
+
+    <!-- 🔹 HEADER WITH IMAGE & TEXT -->
+    <div class="challenge-header">
+      <img src="https://i.imgur.com/JNPIwoP.jpeg" alt="Zimmermann Telegram" class="telegram-image">
+      <div class="challenge-text">
+        <h2>1917 Events</h2>
+        <p>• **January 16:** Germany sends the Zimmermann Telegram to Mexico, proposing an alliance in case of war with the U.S.</p>
+        <p>• **February 1:** Germany resumes unrestricted submarine warfare, attacking merchant ships, including those from the U.S.</p>
+        <p>• **February 3:** The United States severs diplomatic relations with Germany.</p>
+      </div>
+    </div>
+
+    <!-- 🔹 DECRYPTION CHALLENGE -->
+    <div class="challenge-instructions">
+      <p><strong>Jacques finds a coded message fragment.</strong> It appears to be a crucial communication between Germany and Mexico.</p>
+      <p>Use the **cipher key** here **decrypt the hidden message** and uncover its meaning. It Looks like "W" is a "T", "D" is "A", "H" is "E", "K" is "H" and "P" is "M". Numbers are unchanged.</p>
+      
+      <!-- 🔹 ENCRYPTED MESSAGE -->
+      <div id="encrypted-message">
+        <p><strong>Encrypted Text:</strong> "Wklv lv d whvw phvvdjh. Zh duh rIIhulqj 0H[LFR WKH WHUULWRU\ RI 7H[DV, 1HZ 0H[LFR, DQG $UL]RQD."</p>
+      </div>
+
+      <!-- 🔹 DECODING TOOL -->
+      <p>Enter the **decrypted message** below:</p>
+      <input type="text" id="decryption-input" placeholder="Enter decoded message">
+      <button id="check-decryption">Submit</button>
+      <p id="decryption-feedback" class="hidden" style="color: red;">Incorrect! Try again.</p>
+
+<!-- 🔹 SUCCESS MESSAGE (AFTER DECRYPTION) -->
+<div id="decryption-success" class="hidden">
+  <p style="font-weight: bold; font-size: 1.2em;">✅ Correct! You have deciphered the message.</p>
+  <p>"This is a test message. We are offering Mexico the territory of Texas, New Mexico, and Arizona."</p>
+  <p>📜 This confirms the **Zimmermann Telegram** and its impact on the U.S. entry into the war.</p>
+  <button id="go-to-transition" style="display: none;">Continue</button> <!-- ✅ FIXED -->
+</div>
+
+ <!-- 🔹 TRANSITION PAGE -->
+<div id="transition-page" class="page hidden">
+  <h1>Jacques' Next Move</h1>
+  <p>Having deciphered the message, Jacques realizes the immense significance of his discovery. The evidence in his hands could alter the course of the war.</p>
+  <p>With his heart pounding, he knows he must move quickly. Enemy forces could be on his trail at any moment.</p>
+  <p>Determined, he gathers his belongings and sets off toward the nearest Allied outpost. However, the road ahead is treacherous, and new challenges await...</p>
+  
+  <button id="start-challenge-2">Proceed to Challenge 2</button>
+</div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
