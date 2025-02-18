@@ -60,6 +60,30 @@ document.addEventListener("DOMContentLoaded", function () {
         { question: "What was Germany's strategy in 1917?", answers: ["Total war", "War of attrition", "Defensive retreat"], correct: 1 },
         { question: "Which major event took place in April 1917?", answers: ["Zimmermann Telegram", "U.S. enters the war", "Battle of the Somme"], correct: 1 },
         { question: "What was the significance of the Russian Revolution?", answers: ["Russia exited the war", "Germany surrendered", "Britain gained troops"], correct: 0 }
+        { question: "What was the purpose of unrestricted submarine warfare?", answers: ["To attack military fleets", "To cut off Britain's food supply", "To defend German waters"], correct: 1 },
+    { question: "What was the Zimmerman Telegram?", answers: ["A peace offer", "A proposal for Mexico to attack the U.S.", "A Russian declaration"], correct: 1 },
+    { question: "Why did the U.S. enter the war?", answers: ["German attacks on ships", "Allied request", "A Russian alliance"], correct: 0 },
+    { question: "Which battle introduced new air war tactics?", answers: ["Battle of the Marne", "Bloody April", "Battle of Ypres"], correct: 1 },
+    { question: "Which offensive led to French mutinies?", answers: ["Nivelle Offensive", "Battle of Verdun", "Somme Offensive"], correct: 0 },
+    { question: "What major explosion occurred at Messines Ridge?", answers: ["A German factory explosion", "19 Allied mines detonating", "A Zeppelin attack"], correct: 1 },
+    { question: "What was the result of the July Offensive in Russia?", answers: ["A Russian victory", "A massive Russian collapse", "A truce"], correct: 1 },
+    { question: "What did the Allies do to counter U-boats?", answers: ["Developed radar", "Grouped ships into convoys", "Built underwater defenses"], correct: 1 },
+    { question: "What happened at the Third Battle of Ypres?", answers: ["A quick victory", "Heavy losses in mud", "A German retreat"], correct: 1 },
+    { question: "Why did Germany resume unrestricted submarine warfare?", answers: ["To provoke the U.S.", "To starve Britain into surrender", "To gain control of the Atlantic"], correct: 1 },
+    { question: "Which American ship was sunk by a German U-boat, pushing the U.S. closer to war?", answers: ["Lusitania", "Housatonic", "Titanic"], correct: 1 },
+    { question: "How many ships did German U-boats sink in April 1917?", answers: ["500", "886", "1200"], correct: 1 },
+    { question: "What did the Zimmerman Telegram propose?", answers: ["An alliance between Germany and Mexico", "A peace treaty with Russia", "The surrender of Austria-Hungary"], correct: 0 },
+    { question: "Who abdicated in Russia as a result of the revolution?", answers: ["Vladimir Lenin", "Tsar Nicholas II", "Joseph Stalin"], correct: 1 },
+    { question: "What was the French General Nivelle’s promise before his failed offensive?", answers: ["Victory in 48 hours", "An end to the war", "A stronger defense"], correct: 0 },
+    { question: "Why did French soldiers mutiny in 1917?", answers: ["Food shortages", "High casualties with no results", "Poor leadership"], correct: 1 },
+    { question: "What major change in British naval strategy helped counter U-boat attacks?", answers: ["Introducing warships", "Grouping ships into convoys", "Using underwater mines"], correct: 1 },
+    { question: "What was the impact of the Third Battle of Ypres (Passchendaele)?", answers: ["A German victory", "A massive battle fought in terrible conditions", "The capture of Berlin"], correct: 1 },
+    { question: "Which nation declared war on Germany in 1917?", answers: ["Spain", "Brazil", "Turkey"], correct: 1 },
+    { question: "What did the Balfour Declaration support?", answers: ["A Jewish homeland in Palestine", "A ceasefire with Germany", "The independence of Poland"], correct: 0 },
+    { question: "Why was the British victory at Gaza significant?", answers: ["It ended Ottoman rule in Jerusalem", "It allowed Germany to reinforce its allies", "It stopped U-boat attacks"], correct: 0 },
+    { question: "What was the result of the Battle of Caporetto?", answers: ["An Italian victory", "A massive Italian defeat", "A British retreat"], correct: 1 },
+    { question: "What event allowed Germany to move troops from the Eastern to the Western Front?", answers: ["The Battle of Cambrai", "The Russian Revolution", "The arrival of U.S. troops"], correct: 1 },
+    { question: "What was the major technological innovation used by Britain at the Battle of Cambrai?", answers: ["Poison gas", "Tanks", "Flamethrowers"], correct: 1 }
       
     ];
 
