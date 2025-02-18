@@ -1,15 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>breakout parte 3</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,85 +8,302 @@
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
   <!-- 🔹 INTRO PAGE (DEFAULT START) -->
-  <div id="page-intro-3" class="page">
-    <h1>WW1: Breakout - Part 3</h1>
-    <p>After uncovering the German deadly plan, Jacques knows he must deliver this information to the Allied forces. With his heart pounding, he leaves the abandoned farmhouse and heads toward the forest. The night provides him some cover, but danger lurks in every shadow.
+  <div id="page-intro" class="page active">
+    <div class="intro-wrapper">
+      <div class="intro-image-container">
+        <img src="https://i.imgur.com/PHicHIe.jpeg" alt="Jacques in the bunker" class="intro-image">
+      </div>
+      <div class="intro-text">
+        <h1>WW1: Breakout - Part 3</h1>
+        <p>After uncovering the German deadly plan, Jacques knows he must deliver this information to the Allied forces. With his heart pounding, he leaves the abandoned farmhouse and heads toward the forest. The night provides him some cover, but danger lurks in every shadow.
 
-As he moves carefully, the distant rumble of artillery shakes the ground. Suddenly, he hears muffled voices and footsteps approaching. He quickly drops to the ground, pressing himself against the cold earth. A German patrol is nearby.
+          As he moves carefully, the distant rumble of artillery shakes the ground. Suddenly, he hears muffled voices and footsteps approaching. He quickly drops to the ground, pressing himself against the cold earth. A German patrol is nearby.
 
-Holding his breath, Jacques remains still. He watches as the soldiers move past him, their lanterns flickering. Once the coast is clear, he continues his journey. After an hour of cautious movement, he notices something unusual—a metal hatch partially buried under dead leaves.
+          Holding his breath, Jacques remains still. He watches as the soldiers move past him, their lanterns flickering. Once the coast is clear, he continues his journey. After an hour of cautious movement, he notices something unusual—a metal hatch partially buried under dead leaves.
 
-He brushes away the debris and carefully opens the heavy hatch. A hidden bunker. Could this be a secret German outpost? Or an old, abandoned refuge?
+          He brushes away the debris and carefully opens the heavy hatch. A hidden bunker. Could this be a secret German outpost? Or an old, abandoned refuge?
 
-As he steps inside, the dim light reveals maps, documents, and strange equipment scattered across the wooden table. A radio device crackles faintly. Jacques' instincts tell him this place holds valuable intelligence, but there’s no time to waste..</p>
-    <p>To proceed, enter the code from your previous mission.</p>
-
-    <!-- 🔹 INPUT CODE BOX -->
-    <div id="code-box">
-      <p><strong>Enter the code to unlock the bunker:</strong></p>
-      <input type="text" id="bunker-code" placeholder="Enter 5-digit code" maxlength="5">
-      <button id="check-code">Submit</button>
-      <p id="code-error" class="hidden" style="color: red;">Incorrect! Try again.</p>
+          As he steps inside, the dim light reveals maps, documents, and strange equipment scattered across the wooden table. A radio device crackles faintly. Jacques' instincts tell him this place holds valuable intelligence, but there’s no time to waste...</p>
+                <p>To proceed, enter the code from your previous mission.</p>
+        <div id="code-box">
+          <p><strong>Enter the code to unlock the bunker:</strong></p>
+          <input type="text" id="bunker-code" placeholder="Enter 5-digit code" maxlength="5">
+          <button id="check-code">Submit</button>
+          <p id="code-error" class="hidden" style="color: red;">Incorrect! Try again.</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- 🔹 CHALLENGE 1 (HIDDEN AT START) -->
-  <div id="challenge-1" class="page">
+  <!-- 🔹 CHALLENGE 1 -->
+  <div id="challenge-1" class="page hidden">
     <h1>Challenge 1: The Coded Message</h1>
-
-    <!-- 🔹 HEADER WITH IMAGE & TEXT -->
-    <div class="challenge-header">
-      <img src="https://i.imgur.com/JNPIwoP.jpeg" alt="Zimmermann Telegram" class="telegram-image">
+    <div class="challenge-wrapper">
+      <div class="challenge-image-container">
+        <img src="https://i.imgur.com/JNPIwoP.jpeg" width="300" height="200" alt="Zimmermann Telegram" class="challenge-image">
+      </div>
       <div class="challenge-text">
-        <h2>1917 Events</h2>
-        <p>• **January 16:** Germany sends the Zimmermann Telegram to Mexico, proposing an alliance in case of war with the U.S.</p>
+        <h2>1917 January and February main events</h2>
+     <p>• **January 16:** Germany sends the Zimmermann Telegram to Mexico, proposing an alliance in case of war with the U.S.</p>
         <p>• **February 1:** Germany resumes unrestricted submarine warfare, attacking merchant ships, including those from the U.S.</p>
         <p>• **February 3:** The United States severs diplomatic relations with Germany.</p>
       </div>
     </div>
-
-    <!-- 🔹 DECRYPTION CHALLENGE -->
-    <div class="challenge-instructions">
+    <div class="challenge-content">
       <p><strong>Jacques finds a coded message fragment.</strong> It appears to be a crucial communication between Germany and Mexico.</p>
       <p>Use the **cipher key** here **decrypt the hidden message** and uncover its meaning. It Looks like "W" is a "T", "D" is "A", "H" is "E", "K" is "H" and "P" is "M". Numbers are unchanged.</p>
-      
-      <!-- 🔹 ENCRYPTED MESSAGE -->
-      <div id="encrypted-message">
-        <p><strong>Encrypted Text:</strong> "Wklv lv d whvw phvvdjh. Zh duh rIIhulqj 0H[LFR WKH WHUULWRU\ RI 7H[DV, 1HZ 0H[LFR, DQG $UL]RQD."</p>
-      </div>
-
-      <!-- 🔹 DECODING TOOL -->
-      <p>Enter the **decrypted message** below:</p>
       <input type="text" id="decryption-input" placeholder="Enter decoded message">
       <button id="check-decryption">Submit</button>
       <p id="decryption-feedback" class="hidden" style="color: red;">Incorrect! Try again.</p>
+    </div>
+  </div>
 
-<!-- 🔹 SUCCESS MESSAGE (AFTER DECRYPTION) -->
-<div id="decryption-success" class="hidden">
-  <p style="font-weight: bold; font-size: 1.2em;">✅ Correct! You have deciphered the message.</p>
-  <p>"This is a test message. We are offering Mexico the territory of Texas, New Mexico, and Arizona."</p>
-  <p>📜 This confirms the **Zimmermann Telegram** and its impact on the U.S. entry into the war.</p>
-  <button id="go-to-transition" style="display: none;">Continue</button> <!-- ✅ FIXED -->
+  <!-- 🔹 SUCCESS MESSAGE (AFTER DECRYPTION) -->
+  <div id="decryption-success" class="hidden">
+    <p><strong>✅ Correct! You have deciphered the message.</strong></p>
+    <p>"This is a test message. We are offering Mexico the territory of Texas, New Mexico, and Arizona."</p>
+    <p>📜 This confirms the **Zimmermann Telegram** and its impact on the U.S. entry into the war.</p>
+    <button id="go-to-transition">Continue</button>
+  </div>
+
+  <!-- 🔹 TRANSITION PAGE -->
+  <div id="transition-page" class="page hidden">
+    <h1>Jacques' Next Move</h1>
+    <p>Having deciphered the message, Jacques realizes the immense significance of his discovery. The evidence in his hands could alter the course of the war.</p>
+    <p>With his heart pounding, he knows he must move quickly. Enemy forces could be on his trail at any moment.</p>
+    <p>Determined, he gathers his belongings and sets off toward the nearest Allied outpost. However, the road ahead is treacherous, and new challenges await...</p>
+    <button id="start-challenge-2">Proceed to Challenge 2</button>
+  </div>
+
+  <!-- 🔹 CHALLENGE 2: INTELLIGENCE QUIZ -->
+  <div id="challenge-2" class="page hidden">
+    <h1>Challenge 2: Intelligence Report - The Turning Points of 1917</h1>
+    
+    
+    <div class="video-container">
+  <p><strong>Before proceeding, watch this intelligence briefing on the key events of 1917:</strong></p>
+   
+      
+  <iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/zz0Wz-o4dTI?si=NJ6VwWA6fFuHlz10" 
+    title="WWI Trench Warfare" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>  
+</div>
+     
+    
+    
+    <p><strong>Answer the following multiple-choice questions:</strong></p>
+    <div id="quiz-container">
+      <h2 id="question-text">Loading question...</h2>
+      <div id="answers-container"></div>
+      <p id="quiz-feedback" class="hidden">Incorrect! Try again.</p>
+      <button id="next-question" class="hidden">Next</button>
+    </div>
+  </div>
+ <div id="challenge-2-success" class="hidden">
+    <p>✅ Well done! Jacques has completed his intelligence report successfully.</p>
+    <button id="go-to-challenge-3" class="hidden">Proceed to Challenge 3</button>
 </div>
 
- <!-- 🔹 TRANSITION PAGE -->
-<div id="transition-page" class="page hidden">
-  <h1>Jacques' Next Move</h1>
-  <p>Having deciphered the message, Jacques realizes the immense significance of his discovery. The evidence in his hands could alter the course of the war.</p>
-  <p>With his heart pounding, he knows he must move quickly. Enemy forces could be on his trail at any moment.</p>
-  <p>Determined, he gathers his belongings and sets off toward the nearest Allied outpost. However, the road ahead is treacherous, and new challenges await...</p>
   
-  <button id="start-challenge-2">Proceed to Challenge 2</button>
+<!-- 🔹 CHALLENGE 3: Cartas desde el Frente -->
+  
+  <div id="challenge-3" class="page hidden">
+    <div class="challenge-3-wrapper">
+        <div class="challenge-3-image-container">
+            <img src="https://i.imgur.com/wlB4Hv5.jpeg" alt="Jacques in the bunker" class="challenge-3-image">
+        </div>
+        <div class="challenge-3-text">
+          <h1>Jacques' Escape and a Fateful Discovery</h1>
+<p>Jacques moves swiftly under the cover of darkness, navigating the ruined countryside with calculated steps. His mind races—if the Allies can decode the intelligence he carries, it could shift the tides of war. </p>
+
+<p>But just as he nears the edge of a war-torn village, he hears distant voices—German soldiers. He freezes, pressing himself against the cold stone wall of an abandoned house. His heart pounds. He cannot risk capture.</p>
+
+<p>Scanning his surroundings, he spots an old trench system leading toward the Allied lines. Without hesitation, he slips into the muddy passage, crawling his way forward. The air is thick with the scent of damp earth and decay, remnants of past battles lingering like ghosts in the night.</p>
+
+<p>As dawn begins to break, Jacques stumbles upon something unexpected—a satchel half-buried in the mud. Inside, he finds a collection of letters, hastily written but filled with raw emotion. Letters from soldiers and nurses, voices from both sides of the war, each carrying stories of hope, despair, and survival.</p>
+
+<p>He tucks them into his coat and presses on. But as he nears the Allied outpost, the weight of these letters lingers in his mind. Who wrote them? What stories do they hold?</p>
+
+<p>Now, it’s your turn to uncover their origins. Read the letters carefully and determine their country, year, and location.</p>  
+    <h1>Challenge 3: Letters from the Front</h1>
+    <p>Read the following letter from a soldier and answer the questions.</p>
+    
+        </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+
+
+    <!-- Letter Display -->
+    <div id="letter-container">
+        <p id="letter-text">Loading letter...</p>
+    </div>
+
+    <!-- Question 1: Front -->
+    <p>Which front is the soldier describing?</p>
+    <button class="answer-button" data-question="front" data-answer="Western">Western Front</button>
+    <button class="answer-button" data-question="front" data-answer="Eastern">Eastern Front</button>
+
+    <!-- Question 2: Country -->
+    <p>Which country does the soldier or nurse belong to?</p>
+    <button class="answer-button" data-question="country" data-answer="British">British</button>
+    <button class="answer-button" data-question="country" data-answer="French">French</button>
+    <button class="answer-button" data-question="country" data-answer="German">German</button>
+    <button class="answer-button" data-question="country" data-answer="Russian">Russian</button>
+
+    <!-- Question 3: Year -->
+    <p>What year do you think this letter was written?</p>
+    <button class="answer-button" data-question="year" data-answer="1914">1914</button>
+    <button class="answer-button" data-question="year" data-answer="1915">1915</button>
+    <button class="answer-button" data-question="year" data-answer="1916">1916</button>
+    <button class="answer-button" data-question="year" data-answer="1917">1917</button>
+
+    <!-- Feedback Section -->
+    <p id="letter-feedback" class="hidden">Checking your answers...</p>
+    
+    <!-- Next Letter or Continue Button -->
+    <button id="next-letter" class="hidden">Next Letter</button>
+    <button id="go-to-next-section" class="hidden">Continue to the Next Section</button>
 </div>
+<!-- 🔹 TRANSITION PAGE AFTER CHALLENGE 3 -->
+<div id="transition-challenge-4" class="page hidden">
+    <div class="transition-wrapper">
+        <!-- IMAGE CONTAINER -->
+        <div class="transition-image-container">
+            <img src="IMAGE_URL_HERE" alt="Marching Soldiers" class="transition-image">
+        </div>
+
+        <!-- TEXT CONTAINER -->
+        <div class="transition-text">
+            <h1>Jacques' Journey Continues</h1>
+            <p>With the letters in his possession, Jacques finally reaches the Allied outpost. Exhausted but determined, he hands the intelligence to the commanding officer. The war is shifting, and critical events are unfolding.</p>
+            
+            <p>As Jacques listens to the radio transmissions, he learns about major developments in the war—Russia is on the brink of revolution, and the United States has just declared war on Germany. The world is changing, and Jacques knows his mission is far from over.</p>
+
+            <p>For now, he has a moment to catch his breath. But soon, a new challenge will arise. The intelligence gathered suggests the Germans are planning another major offensive, and time is running out.</p>
+        </div>
+    </div>
+
+    <h2>Key Events: March - July 1917</h2>
+    <ul class="timeline">
+        <li><strong>March 8:</strong> The February Revolution begins in Russia.</li>
+        <li><strong>March 15:</strong> Tsar Nicholas II abdicates; the Russian Empire collapses.</li>
+        <li><strong>April 6:</strong> The United States declares war on Germany.</li>
+        <li><strong>April 16 - May 9:</strong> The Nivelle Offensive ends in heavy losses for France.</li>
+        <li><strong>April 17:</strong> French soldiers begin mutinies.</li>
+        <li><strong>May 15:</strong> General Pétain replaces Nivelle as the French army commander.</li>
+        <li><strong>June 7:</strong> The British launch a successful attack at Messines in Belgium.</li>
+        <li><strong>July 1:</strong> The Kerensky Offensive in Russia fails.</li>
+        <li><strong>July 6:</strong> Lawrence of Arabia leads Arab forces to capture Aqaba from the Ottomans.</li>
+    </ul>
+
+    <button id="start-challenge-4">Proceed to Challenge 4</button>
+</div>
+<!-- 🔹 CHALLENGE 4: TIMELINE OF 1918 -->
+<div id="challenge-4" class="page hidden">
+    <div class="challenge-4-wrapper">
+        <!-- IMAGE CONTAINER -->
+        <div class="challenge-4-image-container">
+            <img src="https://i.imgur.com/X92dEQS.jpeg" alt="Jacques in 1918" class="challenge-4-image">
+        </div>
+
+        <!-- TEXT CONTAINER -->
+        <div class="challenge-4-text">
+            <h1>Jacques' Final Mission</h1>
+            <p>The war is reaching its final moments, but the fighting is far from over. Jacques now finds himself caught in the chaos of 1918, where every decision could mean the difference between victory and defeat.</p>
+            
+            <p>Allied forces push forward, while Germany launches one last desperate offensive. The world is changing, and Jacques must ensure that the right intelligence reaches those who need it most.</p>
+
+            <p>As he moves through the trenches, he encounters an Allied commander who tasks him with organizing critical war events into a correct sequence. Time is running out.</p>
+        </div>
+    </div>
+
+    <h2>🔹 Challenge 4: The Race Against Time</h2>
+  <!-- 🔹 Video Introduction for Challenge 4 -->
+<div class="video-container">
+    <p><strong>Before you begin, watch this video about the key events of 1918:</strong></p>
+    <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/zapbLqZUwrA?si=8xrFQYlEdn_6d8H5" 
+        title="WW1: The Final Year - 1918" 
+        frameborder="0" 
+        allowfullscreen>
+    </iframe>
+</div>
+
+    <p><strong>Instructions:</strong> Below, you'll see key events from World War I. They are currently in the wrong order! Your task is to **drag and drop** them into the correct sequence.</p>
+
+    <!-- Timeline Sorting Area -->
+    <div id="timeline-container">
+        <ul id="timeline-events">
+            <li class="timeline-event" draggable="true" data-year="1914">⚠️ Assassination of Archduke Franz Ferdinand</li>
+            <li class="timeline-event" draggable="true" data-year="1917">🔄 Russian Revolution - The Bolsheviks take power</li>
+            <li class="timeline-event" draggable="true" data-year="1918">🕊️ The Armistice is signed, ending the war</li>
+            <li class="timeline-event" draggable="true" data-year="1915">💀 First use of poison gas in warfare</li>
+            <li class="timeline-event" draggable="true" data-year="1916">⚔️ Battle of the Somme - One of the bloodiest battles</li>
+            <li class="timeline-event" draggable="true" data-year="1918">🇺🇸 The United States plays a decisive role in battle</li>
+        </ul>
+    </div>
+
+    <!-- Submission Button -->
+    <button id="submit-timeline">Check Order</button>
+
+    <!-- Feedback Section -->
+    <p id="timeline-feedback" class="hidden">Checking answers...</p>
+    
+    <!-- Next Section Button -->
+    <button id="proceed-after-timeline" class="hidden">Proceed to the Final Section</button>
+</div>
+<!-- 🔹 CHALLENGE 4: Introduction Page -->
+<div id="challenge-4-intro" class="page hidden">
+    <div class="challenge-4-wrapper">
+        <!-- IMAGE CONTAINER -->
+        <div class="challenge-4-image-container">
+            <img src="https://i.imgur.com/REPLACE_WITH_YOUR_IMAGE.jpeg" alt="Jacques in 1918" class="challenge-4-image">
+        </div>
+
+        <!-- TEXT CONTAINER -->
+        <div class="challenge-4-text">
+            <h1>Jacques' Final Mission</h1>
+            <p>1918. The war is reaching its final moments, but the fighting is far from over. 
+            Jacques is caught in the chaos of the final offensives, where every decision could mean the difference between victory and defeat.</p>
+            
+            <p>Allied forces push forward while Germany launches a last desperate offensive. The world is changing, and Jacques must ensure that the right intelligence reaches those who need it most.</p>
+
+            <p>As he moves through the trenches, he encounters an Allied commander who tasks him with **analyzing battle movements** to determine the best strategy.</p>
+        </div>
+    </div>
+
+    <h2>🔹 Watch the 1918 War Briefing</h2>
+    <div class="video-container">
+        <p><strong>Before proceeding, watch this video about the key events of 1918 and take notes:</strong></p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/zapbLqZUwrA?si=Jhu1wlq73J4nI2ZD" 
+                title="WW1: The Final Year - 1918" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Warning for Students -->
+    <p class="note-warning">⚠️ **Important:** Take notes on key battles, troop movements, and strategies. This will help you in the next challenge.</p>
+
+    <!-- Proceed Button -->
+    <button id="start-challenge-4-map">Proceed to the Map Challenge</button>
+</div>
+
 
   <script src="script.js" defer></script>
-</body>
-</html>
-<!-- partial -->
-  <script  src="./script.js"></script>
-
 </body>
 </html>
