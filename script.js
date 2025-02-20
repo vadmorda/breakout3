@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", function () {
             page.classList.add("hidden");
         });
 
+        document.getElementById("decryption-success")?.classList.add("hidden");
+        document.getElementById("challenge-2-success")?.classList.add("hidden");
+
         const targetPage = document.getElementById(pageToShow);
         if (targetPage) {
             targetPage.classList.add("active");
@@ -20,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // ✅ INTRO PAGE BUTTON FUNCTIONALITY
+    // ✅ Handle Bunker Code Input
     document.getElementById("check-code")?.addEventListener("click", function () {
         console.log("🔍 Checking bunker code...");
         const codeInput = document.getElementById("bunker-code");
@@ -33,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // ✅ CHALLENGE 1: Decryption Process
+    // ✅ Handle Decryption Process (Challenge 1)
     document.getElementById("check-decryption")?.addEventListener("click", function () {
         let userAnswer = document.getElementById("decryption-input").value.trim().toLowerCase();
         userAnswer = userAnswer.replace(/[.,]/g, "").replace(/\s+/g, " ");
@@ -44,19 +47,26 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("✅ Correct decryption! Unlocking transition page...");
             document.getElementById("decryption-feedback").classList.add("hidden");
             document.getElementById("decryption-success").classList.remove("hidden");
+
+            document.getElementById("go-to-transition").addEventListener("click", function () {
+                console.log("🚀 Moving to transition page...");
+                showPage("transition-page");
+            });
         } else {
             document.getElementById("decryption-feedback").classList.remove("hidden");
         }
     });
 
-    // ✅ FIXED: CHALLENGE 1 BUTTON TO TRANSITION PAGE
-    document.getElementById("go-to-transition")?.addEventListener("click", function () {
-        console.log("🚀 Moving to transition page...");
-        showPage("transition-page");
+    // ✅ Proceed to Challenge 2
+    document.getElementById("start-challenge-2")?.addEventListener("click", function () {
+        console.log("🚀 Moving to Challenge 2...");
+        showPage("challenge-2");
+        loadQuestion();
     });
 
-    // ✅ CHALLENGE 2 FUNCTIONALITY
+    // ✅ QUIZ LOGIC FOR CHALLENGE 2
     const questions = [
+        const questions = [
         { question: "What was Germany's strategy in 1917?", answers: ["Total war", "War of attrition", "Defensive retreat"], correct: 1 },
         { question: "Which major event took place in April 1917?", answers: ["Zimmermann Telegram", "U.S. enters the war", "Battle of the Somme"], correct: 1 },
         { question: "What was the significance of the Russian Revolution?", answers: ["Russia exited the war", "Germany surrendered", "Britain gained troops"], correct: 0 }
@@ -85,6 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { question: "What event allowed Germany to move troops from the Eastern to the Western Front?", answers: ["The Battle of Cambrai", "The Russian Revolution", "The arrival of U.S. troops"], correct: 1 },
     { question: "What was the major technological innovation used by Britain at the Battle of Cambrai?", answers: ["Poison gas", "Tanks", "Flamethrowers"], correct: 1 }
       
+    ];
     ];
 
     let currentQuestionIndex = 0;
@@ -121,49 +132,59 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    document.getElementById("start-challenge-2")?.addEventListener("click", function () {
-        console.log("🚀 Moving to Challenge 2...");
-        showPage("challenge-2");
-        loadQuestion();
-    });
-
     document.getElementById("next-question")?.addEventListener("click", function () {
         if (currentQuestionIndex < questions.length - 1) {
             currentQuestionIndex++;
             loadQuestion();
         } else {
-            console.log("✅ All questions answered! Moving to Challenge 3...");
-            showPage("challenge-3");
-            loadLetter();
+            console.log("✅ All questions answered! Showing Challenge 3 button.");
+            document.getElementById("challenge-2-success").classList.remove("hidden");
+
+            const challenge3Button = document.getElementById("go-to-challenge-3");
+            challenge3Button.classList.remove("hidden");
+
+            challenge3Button.addEventListener("click", function () {
+                console.log("🚀 Moving to Challenge 3...");
+                showPage("challenge-3");
+                loadRandomLetter();
+            });
         }
     });
 
-    // ✅ CHALLENGE 3 FUNCTIONALITY
+    // ✅ LETTERS DATA FOR CHALLENGE 3
     const letters = [
         { text: "Today, the trenches are flooded with rain. The mud reaches our knees, and the artillery does not stop...", front: "Western", country: "British", year: "1916" },
         { text: "Our officers are worried. The Germans are pushing hard, and our resources are running low...", front: "Eastern", country: "Russian", year: "1915" },
-        { text: "Shells fall all around us. The gas attacks have become unbearable. I have seen comrades choke to death...", front: "Western", country: "French", year: "1917" }
+        { text: "Shells fall all around us. The gas attacks have become unbearable. I have seen comrades choke to death...", front: "Western", country: "French", year: "1917" },
+        { text: "The battle rages on. I hear the whistle of our commander, and we rush over the top. It is madness. Bullets zip past, and many do not make it.", front: "Western", country: "German", year: "1915" },
+        { text: "I tend to the wounded as best as I can. Some cry for their mothers. The bandages run out, and I am forced to use torn shirts instead.", front: "Western", country: "British", year: "1914" },
+        { text: "The cavalry is useless in this terrain, and we dig trenches in frozen ground. Supplies are scarce, and frostbite has already claimed some of my friends.", front: "Eastern", country: "Russian", year: "1916" }
     ];
 
-    let currentLetterIndex = 0;
+    let availableLetters = [...letters]; 
+    let currentLetter = null; 
 
-    function loadLetter() {
-        if (currentLetterIndex >= letters.length) {
+    function loadRandomLetter() {
+        if (availableLetters.length === 0) {
+            console.log("✅ All letters used. Proceed to next section.");
             document.getElementById("next-letter").classList.add("hidden");
             document.getElementById("go-to-next-section").classList.remove("hidden");
             return;
         }
 
-        document.getElementById("letter-text").innerText = letters[currentLetterIndex].text;
-        document.querySelectorAll(".answer-button").forEach(button => button.style.backgroundColor = "");
-        document.getElementById("next-letter").classList.add("hidden");
+        const randomIndex = Math.floor(Math.random() * availableLetters.length);
+        currentLetter = availableLetters.splice(randomIndex, 1)[0];
+
+        document.getElementById("letter-text").innerText = currentLetter.text;
     }
 
-    document.querySelectorAll(".answer-button").forEach(button => {
+    document.querySelectorAll(".answer-button").forEach((button) => {
         button.addEventListener("click", function () {
+            if (!currentLetter) return; 
+
             const questionType = this.getAttribute("data-question");
             const selectedAnswer = this.getAttribute("data-answer");
-            const correctAnswer = letters[currentLetterIndex][questionType];
+            const correctAnswer = currentLetter[questionType];
 
             if (selectedAnswer === correctAnswer) {
                 this.style.backgroundColor = "green";
@@ -171,24 +192,39 @@ document.addEventListener("DOMContentLoaded", function () {
                 this.style.backgroundColor = "red";
             }
 
-            document.getElementById("next-letter").classList.remove("hidden");
+            checkCompletion();
         });
     });
 
+    function checkCompletion() {
+        const selectedAnswers = document.querySelectorAll(".answer-button[style='background-color: green;']");
+        if (selectedAnswers.length >= 2) {
+            if (availableLetters.length > 0) {
+                document.getElementById("next-letter").classList.remove("hidden");
+            } else {
+                document.getElementById("go-to-next-section").classList.remove("hidden");
+            }
+        }
+    }
+
     document.getElementById("next-letter")?.addEventListener("click", function () {
-        currentLetterIndex++;
-        loadLetter();
+        loadRandomLetter();
+        document.querySelectorAll(".answer-button").forEach(button => button.style.backgroundColor = "");
+        document.getElementById("next-letter").classList.add("hidden");
     });
 
     document.getElementById("go-to-next-section")?.addEventListener("click", function () {
-        showPage("challenge-4");
+        showPage("transition-challenge-4");
     });
 
-    // ✅ CHALLENGE 4: DRAG AND DROP FIXED
+    document.getElementById("start-challenge-4")?.addEventListener("click", function () {
+        showPage("challenge-4");
+    });
+// ✅ Drag-and-Drop Logic for Timeline
     const timelineEvents = document.querySelectorAll(".timeline-event");
     let draggedItem = null;
 
-    timelineEvents.forEach(event => {
+    timelineEvents.forEach((event) => {
         event.addEventListener("dragstart", function () {
             draggedItem = this;
             setTimeout(() => (this.style.display = "none"), 0);
@@ -221,5 +257,105 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // ✅ Check Timeline Order
+    document.getElementById("submit-timeline")?.addEventListener("click", function () {
+        const correctOrder = ["1914", "1915", "1916", "1917", "1918", "1918"];
+        let userOrder = [];
+
+        document.querySelectorAll(".timeline-event").forEach((event) => {
+            userOrder.push(event.getAttribute("data-year"));
+        });
+
+        if (JSON.stringify(userOrder) === JSON.stringify(correctOrder)) {
+            document.getElementById("timeline-feedback").innerText = "✅ Correct order! You've unlocked the final key.";
+            document.getElementById("timeline-feedback").style.color = "green";
+            document.getElementById("proceed-after-timeline").classList.remove("hidden");
+        } else {
+            document.getElementById("timeline-feedback").innerText = "❌ Incorrect order! Try again.";
+            document.getElementById("timeline-feedback").style.color = "red";
+        }
+
+        document.getElementById("timeline-feedback").classList.remove("hidden");
+    });
+
+    // ✅ Proceed to Final Section
+    document.getElementById("proceed-after-timeline")?.addEventListener("click", function () {
+        showPage("challenge-5-intro");
+    });
+
+
+// ✅ Handle Page Transition to Challenge 5 Map Challenge
+document.getElementById("start-challenge-5")?.addEventListener("click", function () {
+    showPage("challenge-5"); // This will be the next part where students interact with the map
 });
 
+  // ✅ CHALLENGE 5: DRAG AND DROP FUNCTIONALITY (NOW INSIDE THE SAME BLOCK)
+    const draggables = document.querySelectorAll(".draggable");
+    const dropZones = document.querySelectorAll(".drop-zone");
+
+    draggables.forEach(draggable => {
+        draggable.addEventListener("dragstart", function () {
+            draggedItem = this;
+            setTimeout(() => (this.style.display = "none"), 0);
+        });
+
+        draggable.addEventListener("dragend", function () {
+            setTimeout(() => {
+                draggedItem.style.display = "block";
+                draggedItem = null;
+            }, 0);
+        });
+    });
+
+    dropZones.forEach(zone => {
+        zone.addEventListener("dragover", function (e) {
+            e.preventDefault();
+        });
+
+        zone.addEventListener("drop", function () {
+            if (draggedItem) {
+                this.textContent = draggedItem.textContent; // Set dropped text
+                this.setAttribute("data-placed", draggedItem.getAttribute("data-location")); // Mark as placed
+                draggedItem.style.display = "none"; // Hide after placing
+            }
+        });
+    });
+
+    // ✅ CHECK MAP ANSWERS
+    document.getElementById("check-map")?.addEventListener("click", function () {
+        const correctPlacements = {
+            "zone-saint-quentin": "Saint-Quentin",
+            "zone-marne": "Marne River",
+            "zone-amiens": "Amiens",
+            "zone-compiegne": "Compiègne"
+        };
+
+        let allCorrect = true;
+
+        for (let zoneID in correctPlacements) {
+            const zone = document.getElementById(zoneID);
+            if (zone.getAttribute("data-placed") !== correctPlacements[zoneID]) {
+                allCorrect = false;
+                zone.style.backgroundColor = "#ff4d4d"; // Red if wrong
+            } else {
+                zone.style.backgroundColor = "#4CAF50"; // Green if correct
+            }
+        }
+
+        if (allCorrect) {
+            document.getElementById("map-feedback").innerText = "✅ All positions correct!";
+            document.getElementById("map-feedback").style.color = "green";
+            document.getElementById("proceed-to-next-section").classList.remove("hidden");
+        } else {
+            document.getElementById("map-feedback").innerText = "❌ Some positions are incorrect. Try again.";
+            document.getElementById("map-feedback").style.color = "red";
+        }
+    });
+
+    // ✅ Proceed to Next Section
+    document.getElementById("proceed-to-next-section")?.addEventListener("click", function () {
+        showPage("next-section-id"); // Replace with actual next section ID
+    });
+
+    console.log("✅ Challenge 5 script initialized successfully.");
+});
