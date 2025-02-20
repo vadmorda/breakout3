@@ -66,10 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ✅ QUIZ LOGIC FOR CHALLENGE 2
     const questions = [
-        const questions = [
         { question: "What was Germany's strategy in 1917?", answers: ["Total war", "War of attrition", "Defensive retreat"], correct: 1 },
         { question: "Which major event took place in April 1917?", answers: ["Zimmermann Telegram", "U.S. enters the war", "Battle of the Somme"], correct: 1 },
-        { question: "What was the significance of the Russian Revolution?", answers: ["Russia exited the war", "Germany surrendered", "Britain gained troops"], correct: 0 }
+        { question: "What was the significance of the Russian Revolution?", answers: ["Russia exited the war", "Germany surrendered", "Britain gained troops"], correct: 0 },
         { question: "What was the purpose of unrestricted submarine warfare?", answers: ["To attack military fleets", "To cut off Britain's food supply", "To defend German waters"], correct: 1 },
     { question: "What was the Zimmerman Telegram?", answers: ["A peace offer", "A proposal for Mexico to attack the U.S.", "A Russian declaration"], correct: 1 },
     { question: "Why did the U.S. enter the war?", answers: ["German attacks on ships", "Allied request", "A Russian alliance"], correct: 0 },
@@ -94,9 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { question: "What was the result of the Battle of Caporetto?", answers: ["An Italian victory", "A massive Italian defeat", "A British retreat"], correct: 1 },
     { question: "What event allowed Germany to move troops from the Eastern to the Western Front?", answers: ["The Battle of Cambrai", "The Russian Revolution", "The arrival of U.S. troops"], correct: 1 },
     { question: "What was the major technological innovation used by Britain at the Battle of Cambrai?", answers: ["Poison gas", "Tanks", "Flamethrowers"], correct: 1 }
-      
-    ];
-    ];
+     ];
 
     let currentQuestionIndex = 0;
 
