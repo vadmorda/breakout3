@@ -269,16 +269,17 @@
     <!-- Next Section Button -->
     <button id="proceed-after-timeline" class="hidden">Proceed to the Final Section</button>
 </div>
-<!-- 🔹 CHALLENGE 4: Introduction Page -->
-<div id="challenge-4-intro" class="page hidden">
-    <div class="challenge-4-wrapper">
+  
+<!-- 🔹 CHALLENGE 5: Introduction Page -->
+<div id="challenge-5-intro" class="page hidden">
+    <div class="challenge-5-wrapper">
         <!-- IMAGE CONTAINER -->
-        <div class="challenge-4-image-container">
-            <img src="https://i.imgur.com/REPLACE_WITH_YOUR_IMAGE.jpeg" alt="Jacques in 1918" class="challenge-4-image">
+        <div class="challenge-5-image-container">
+            <img src="https://i.imgur.com/REPLACE_WITH_YOUR_IMAGE.jpeg" alt="Jacques in 1918" class="challenge-5-image">
         </div>
 
         <!-- TEXT CONTAINER -->
-        <div class="challenge-4-text">
+        <div class="challenge-5-text">
             <h1>Jacques' Final Mission</h1>
             <p>1918. The war is reaching its final moments, but the fighting is far from over. 
             Jacques is caught in the chaos of the final offensives, where every decision could mean the difference between victory and defeat.</p>
@@ -289,7 +290,18 @@
         </div>
     </div>
 
-    <h2>🔹 Watch the 1918 War Briefing</h2>
+    <h2>🔹 Read or watch the 1918 War Briefing</h2>
+  <p>1918 is the year that Woodrow Wilson unveils his 'Fourteen Points' as the basis for future world peace. Meanwhile Bolshevik Russia quits the war by signing the Treaty of Brest-Litovsk, freeing up half a million German troops for General Ludendorff's last ditch attempt to win all-out victory on the Western Front. His Spring Offensive, also known as the Kaiserschlacht, or 'Kaiser's Battle', comes tantalising close to success, but is finally halted by British and Australian troops at Amiens in April. 
+
+In the skies over the Western Front, the air war intensifies, but the Allies are now dominant. On 21st April Germany's most famous ace, Manfred von Richthofen, the 'Red Baron', is shot down and killed. 
+
+That spring US troops arrive in Europe in force. The US 1st Infantry Division goes into action at Cantigny, while US Marines and the US 2nd Infantry Division win a victory at Belleau Wood. US troops help to turn the tide as the Allies launch their Hundred Days Offensive, surging past the Hindenburg Line, and pursuing a defeated German army. 
+
+In the Balkans, Allied victory at Dobro Pole leads to the collapse of the Bulgarian army and an armistice. British-led forces win victory in the Middle East at Megiddo, and go on to occupy Damascus and Aleppo. With the writing on the wall, the Ottoman Empire signs an armistice with the Allies at Mudros. Austria-Hungary soon follows suit, after defeat by Italy at the Battle of Vittorio Veneto. 
+
+Shortages, military defeat and discontent lead to revolution in Germany. Sailors at the naval base at Kiel mutiny. The Kaiser is forced to abdicate, a republic is proclaimed, and an armistice signed with the Allies at Compiègne on 11th November 1918. 
+
+In 1919 delegates meet at Versailles, outside Paris, to conclude a peace treaty. The Treaty of Versailles imposes a 'war guilt clause' on Germany, huge war reparations, and limits the size of its armed forces. It gives territory to its neighbours, and creates lasting resentment within Germany, later exploited by Adolf Hitler and the Nazi Party to foster a new German nationalism. </p>
     <div class="video-container">
         <p><strong>Before proceeding, watch this video about the key events of 1918 and take notes:</strong></p>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/zapbLqZUwrA?si=Jhu1wlq73J4nI2ZD" 
@@ -300,9 +312,34 @@
     <p class="note-warning">⚠️ **Important:** Take notes on key battles, troop movements, and strategies. This will help you in the next challenge.</p>
 
     <!-- Proceed Button -->
-    <button id="start-challenge-4-map">Proceed to the Map Challenge</button>
+    <button id="start-challenge-5">Proceed to the Map Challenge</button>
 </div>
+<!-- 🔹 CHALLENGE 5: The Lost Map - Troop Movements -->
+<div id="challenge-5" class="page hidden">
+    <h1>Challenge 5: The Lost Map - Movements of Troops in 1918</h1>
 
+    <div class="map-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Western_Front_1918_Amiens.png" alt="Western Front Map 1918" class="battle-map">
+        
+        <!-- Droppable areas -->
+        <div class="drop-zone" id="zone-saint-quentin" data-location="Saint-Quentin">?</div>
+        <div class="drop-zone" id="zone-marne" data-location="Marne River">?</div>
+        <div class="drop-zone" id="zone-amiens" data-location="Amiens">?</div>
+        <div class="drop-zone" id="zone-compiegne" data-location="Compiègne">?</div>
+    </div>
+
+    <!-- Draggable locations -->
+    <div class="draggable-items">
+        <div class="draggable" id="drag-saint-quentin" data-location="Saint-Quentin">Saint-Quentin</div>
+        <div class="draggable" id="drag-marne" data-location="Marne River">Marne River</div>
+        <div class="draggable" id="drag-amiens" data-location="Amiens">Amiens</div>
+        <div class="draggable" id="drag-compiegne" data-location="Compiègne">Compiègne</div>
+    </div>
+
+    <button id="check-map">Check Answer</button>
+    <p id="map-feedback" class="hidden"></p>
+    <button id="proceed-to-next-section" class="hidden">Proceed to the Next Section</button>
+</div>
 
   <script src="script.js" defer></script>
 </body>
